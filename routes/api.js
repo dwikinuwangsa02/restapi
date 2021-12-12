@@ -580,7 +580,7 @@ router.get('/asupan/tiktok', async (req, res, next) => {
 if(!apikeyInput) return res.json(loghandler.notparam)
 if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-   fetch(encodeURI(`https://github.com/zeeoneofc/Asupan/blob/main/video/tiktok.json`))
+   fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/video/tiktok.json`))
     .then(response => response.json())
     .then(data => {
     var result = data;
