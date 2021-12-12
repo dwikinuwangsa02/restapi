@@ -8,7 +8,7 @@ var zahirr = db.get("zahirr");
 	console.log('')
 }
 
-var creator = "@zeeoneofc"
+var creator = "MyFileArchive"
 var ytdl = require('ytdl-core');
 var ytpl = require('ytpl');
 var secure = require('ssl-express-www');
@@ -41,8 +41,8 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'masukan parameter apikey',
-        getApikey: 'Apikey??? Contact Me On WhatsApp'
+        message: 'Masukan parameter apikey',
+        getApikey: 'Butuh Apikey? Silahkan Hubungi Admin'
     },
     notkey: {
         status: false,
@@ -114,7 +114,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'Apikey??? Contact Me On WhatsApp'
+        message: 'Butuh Apikey? Silahkan Hubungi Admin'
     },
     invalidlink: {
         status: false,
@@ -139,7 +139,7 @@ loghandler = {
     }
 }
 
-const listkey = ["Alphabot", "zeeoneofc"];
+const listkey = ["MyFiLeArChIvE"];
 //router.use(favicon(__path + "/views/logo.ico"));
 
 var len = 15
