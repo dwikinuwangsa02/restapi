@@ -287,7 +287,7 @@ router.get('/china', async (req, res, next) => {
 router.get('/cewe/vietnam', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
-	if (apikeyInput != 'Alphabot')  return res.json(loghandler.invalidKey)
+	if (apikeyInput != `${listkey}`)  return res.json(loghandler.invalidKey)
        fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/vietnam.json`))
         .then(response => response.json())
         .then(data => {
@@ -601,7 +601,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if (apikeyInput != 'alfa')  return res.json(loghandler.invalidKey)
+	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/ahegao.json`))
         .then(response => response.json())
