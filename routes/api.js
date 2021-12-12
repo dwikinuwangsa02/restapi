@@ -41,8 +41,8 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'Masukan parameter apikey',
-        getApikey: 'Butuh Apikey? Silahkan Hubungi Admin'
+        message: 'masukan parameter apikey',
+        getApikey: 'Apikey??? Contact Me On WhatsApp'
     },
     notkey: {
         status: false,
@@ -114,7 +114,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'Butuh Apikey? Silahkan Hubungi Admin'
+        message: 'Apikey??? Contact Me On WhatsApp'
     },
     invalidlink: {
         status: false,
@@ -139,7 +139,7 @@ loghandler = {
     }
 }
 
-const listkey = ["MyFiLeArChIvE"];
+const listkey = ["Alphabot", "zeeoneofc"];
 //router.use(favicon(__path + "/views/logo.ico"));
 
 var len = 15
@@ -203,7 +203,7 @@ router.get('/addapikey', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'Alphabot1') return res.json(loghandler.invalidKey)
+    if (apikey != 'alfa') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.insert({
