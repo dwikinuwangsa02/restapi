@@ -1,6 +1,3 @@
-<?php
-header('Refresh: 5; URL=https://myfilearchive.xyz');
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -98,13 +95,3 @@ header('Refresh: 5; URL=https://myfilearchive.xyz');
         </div>
     </body>
 </html>
-
-<script type="text/javascript">
-    var timeleft = 5;
-    var downloadTimer = setInterval(function(){
-    timeleft--;
-    document.getElementById("countdowntimer").textContent = timeleft;
-    if(timeleft <= 0)
-        clearInterval(downloadTimer);
-    },1000);
-</script>
