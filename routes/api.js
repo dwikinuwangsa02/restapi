@@ -203,7 +203,7 @@ router.get('/addapikey', (req, res, next) => {
 
     if (!apikey) return res.json(loghandler.notparam)
     if (!(status && apikeyInput && email && nomorhp && name && age && country && exp)) return res.json(loghandler.notAddApiKey)
-    if (apikey != 'alfa') return res.json(loghandler.invalidKey)
+    if (apikey != 'Alphabot') return res.json(loghandler.invalidKey)
 
     try {
         zahirr.insert({
@@ -601,7 +601,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if (apikeyInput != 'Alphabot')  return res.json(loghandler.invalidKey)
+	if (apikeyInput != 'alfa')  return res.json(loghandler.invalidKey)
 
        fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/ahegao.json`))
         .then(response => response.json())
