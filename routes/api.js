@@ -270,25 +270,11 @@ router.get('/remove', (req, res, next) => {
 /*
 =====> GACHA CECAN <=====
 */
-router.get('/china', async (req, res, next) => {
-  var apikeyInput = req.query.apikey;
-  if(!apikeyInput) return res.json(loghandler.notparam)
-  if(listkey.includes(apikeyInput)) {
-    const china = JSON.parse(fs.readFileSync(__path +'/cecan/china.json'));
-    const China = china[Math.floor(Math.random() * china.length)];
-    let hasil = China.url;
-    data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path +'/tmp/gambar.jpg', data)
-    res.sendFile(__path +'/tmp/gambar.jpg')
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-})
 router.get('/cewe/vietnam', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/vietnam.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/vietnam.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -306,7 +292,7 @@ router.get('/cewe/thailand', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/thailand.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/thailand.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -324,7 +310,7 @@ router.get('/cewe/china', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/china.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/china.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -342,7 +328,7 @@ router.get('/cewe/indonesia', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/indonesia.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/indonesia.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -360,7 +346,7 @@ router.get('/cewe/korea', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/korea.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/korea.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -378,7 +364,7 @@ router.get('/cewe/japan', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/japan.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/japan.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -396,7 +382,7 @@ router.get('/cewe/malaysia', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/cecan/malaysia.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/malaysia.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -415,7 +401,7 @@ router.get('/asupan/cecan', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)	
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/cecan.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/cecan.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -434,7 +420,7 @@ router.get('/asupan/hijaber', async (req, res, next) => {
         var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/hijaber.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/hijaber.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -454,7 +440,7 @@ router.get('/asupan', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan.js`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/asupan.js`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -475,7 +461,7 @@ router.get('/asupan/rikagusriani', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan/rikagusriani.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/asupan/rikagusriani.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -496,7 +482,7 @@ router.get('/asupan/santuy', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/santuy.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -517,7 +503,7 @@ router.get('/asupan/ukty', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/ukhty.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/ukhty.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -538,7 +524,7 @@ router.get('/asupan/bocil', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/bocil.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/bocil.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -559,7 +545,7 @@ router.get('/asupan/ghea', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/geayubi.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/geayubi.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -580,7 +566,7 @@ router.get('/asupan/tiktok', async (req, res, next) => {
 if(!apikeyInput) return res.json(loghandler.notparam)
 if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-   fetch(encodeURI(`https://raw.githubusercontent.com/zeeoneofc/Asupan/main/video/tiktok.json`))
+   fetch(encodeURI(`https://api.myfilearchive.cloud/json/tiktok.json`))
     .then(response => response.json())
     .then(data => {
     var result = data;
@@ -603,7 +589,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/ass.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/ass.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -624,7 +610,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/ahegao.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/ahegao.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -645,7 +631,7 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/bdsm.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/bdsm.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -666,7 +652,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/blowjob.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/blowjob.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -687,7 +673,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/cuckold.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/cuckold.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -708,7 +694,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/cum.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/cum.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -729,7 +715,7 @@ router.get('/nsfw/ero', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/ero.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/ero.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -750,7 +736,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/femdom.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/femdom.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -771,7 +757,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/foot.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/foot.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -792,7 +778,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/gangbang.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/gangbang.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -813,7 +799,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/glasses.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/glasses.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -834,7 +820,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/hentai.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/hentai.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -855,7 +841,7 @@ router.get('/nsfw/hentaigif', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/hnt_gifs.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/hnt_gifs.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -876,7 +862,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/jahy.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/jahy.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -897,7 +883,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/masturbation.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/masturbation.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -918,7 +904,7 @@ router.get('/nsfw/nsfwNeko', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/nsfwNeko.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/nsfwNeko.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -939,7 +925,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/orgy.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/orgy.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -960,7 +946,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/panties.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/panties.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -981,7 +967,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/pussy.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/pussy.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1002,7 +988,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/thighs.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/thighs.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1023,7 +1009,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if (apikeyInput != 'MyFiLeArChIvE21')  return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/yuri.json`))
+       fetch(encodeURI(`https://api.myfilearchive.cloud/json/yuri.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1781,366 +1767,6 @@ router.get('/textmaker/alam', async (req, res, next) => {
         }
 })
 
-router.get('/muslim/tahlil', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataTahlil.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/wirid', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataWirid.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/ayatkursi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAyatKursi.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/doaharian', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataDoaHarian.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/bacaanshalat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataBacaanShalat.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/niatshalat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataNiatShalat.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/kisahnabi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataKisahNabi.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/asmaulhusna', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/dataAsmaulHusna.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/niatshubuh', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatShubuh.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/niatdzuhur', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatDzuhur.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/niatmaghrib', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatMaghrib.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/niatisya', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatIsya.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/muslim/niatashar', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/data/NiatAshar.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/wallpaper/cyberspace', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/CyberSpace.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/wallpaper/teknologi', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Technology.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/wallpaper/muslim', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Islamic.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/wallpaper/programming', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Programming.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/wallpaper/pegunungan', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/My-SQL-Results/main/Mountain.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
 router.get('/wikipedia', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             search = req.query.search
@@ -2203,27 +1829,6 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 })
 
-
-router.get('/jadwalshalat', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            kota = req.query.kota
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
-        if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
-
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/Zhirrr-Database/main/adzan/${kota}/2021/03.json`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 
 router.get('/fakedata', async (req, res, next) => {
@@ -2578,24 +2183,7 @@ router.get('/anime/kusonime', async (req, res, next) => {
 })
 
 
-router.get('/gabut', async (req, res, next) => {
-        var apikeyInput = req.query.apikey
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'MyFiLeArChIvE21') return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/bosan`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 
 router.get('/manga', async (req, res, next) => {
@@ -3596,6 +3184,7 @@ router.get('/maker/special/epep', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
+
 
 
 module.exports = router
